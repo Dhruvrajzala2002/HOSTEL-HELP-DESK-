@@ -1,0 +1,15 @@
+{
+  "name": "hostel-helpdesk-app",
+  "version": "1.0.0",
+  "description": "Full-stack Hostel Help Desk Management System",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"python -m uvicorn app.main:app --port 8000 --reload --app-dir backend\"",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "python -m uvicorn app.main:app --port 8000 --reload --app-dir backend",
+    "seed": "python backend/seed.py"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
